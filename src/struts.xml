@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+	<constant name="struts.multipart.saveDir" value="d:/dataTemp"/>
+	<package name="myLib" extends="struts-default">
+		<action name="retriveBook" class="myLib.BookCrud" method="retrieveByAuthor">
+			<result name = "success">/retrieveResult.jsp</result>
+			<result name = "error">/retrieveError.jsp</result>
+		</action>
+		<action name="deleteBook" class="myLib.BookCrud" method="delete">
+			<result name = "success">/deleteSuccess.jsp</result>
+			<result name = "error">/deleteError.jsp</result>
+		</action>
+		<action name="retrieveDetial" class="myLib.BookCrud" method="retrieveDetial">
+			<result name = "success">/bookDetail.jsp</result>
+			<result name = "error">/deleteError.jsp</result>
+		</action>
+		<action name="addBook" class="myLib.BookCrud" method="addBook">
+			<result name = "success">/deleteSuccess.jsp</result>
+			<result name = "input">/updateAuthor.jsp</result>
+			<result name = "error">/deleteError.jsp</result>
+		</action>
+		<action name="updateAuthor" class="myLib.BookCrud" method="updateAuthor">
+			<result name = "success">/deleteSuccess.jsp</result>
+			<result name = "error">/deleteError.jsp</result>
+		</action>
+		<action name="updateBook" class="myLib.BookCrud" method="update">
+			<result name = "success">/deleteSuccess.jsp</result>
+			<result name = "input">/updateAuthor.jsp</result>
+			<result name = "error">/deleteError.jsp</result>
+		</action>
+	</package>
+</struts>
